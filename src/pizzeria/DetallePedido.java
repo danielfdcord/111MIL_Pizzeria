@@ -12,6 +12,44 @@ package pizzeria;
 public class DetallePedido {
     
     private int cantidad;
-    private float precio;
+    private float precioOriginalUnitario;
+    private Pizza pizza;
+    
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public Pizza getPizza() {
+        return pizza;
+    }
+
+    public void setPizza(Pizza pizza) {
+        this.pizza = pizza;
+    }
+
+    
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public float getPrecioOriginalUnitario() {
+        return precioOriginalUnitario;
+    }
+
+    public void setPrecioOriginalUnitario(float precioOriginalUnitario) {
+        this.precioOriginalUnitario = precioOriginalUnitario;
+    }
+
+    public DetallePedido(int cantidad, float precio) {
+        this.cantidad = cantidad;
+        this.precioOriginalUnitario = precio;
+    }
+    public  float calcTotalItem() 
+    {   float resultado;
+        resultado=this.cantidad*this.precioOriginalUnitario;
+        return resultado;
+    }
+    
 }
 
