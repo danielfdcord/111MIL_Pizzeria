@@ -9,6 +9,6 @@ package pizzeria;
  *
  * @author facu-
  */
-public class TamañoPizza {
+public class TamanioPizza {
     
 }
