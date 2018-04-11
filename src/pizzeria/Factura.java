@@ -5,16 +5,21 @@
  */
 package pizzeria;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  *
- * @author utku33
+ * @author: Agustin y Jose.
  */
 public class Factura {
     /**
      * CAMPOS
      */
-    private String fechaHoraEmision;
+    private Date fechaHoraEmision;
     private int numero;
+    private ArrayList<DetallePedido> detallesPedido;
+    private EstadoFactura estado;
 
     /**
      * CONSTRUCTORES
@@ -22,9 +27,11 @@ public class Factura {
     public Factura() {
     }
 
-    public Factura(String fechaHoraEmision, int numero) {
+    public Factura(Date fechaHoraEmision, int numero) {
         this.fechaHoraEmision = fechaHoraEmision;
         this.numero = numero;
+        detallesPedido = new ArrayList();
+        estado = new EstadoFactura();
     }
 
     /**
@@ -34,30 +41,26 @@ public class Factura {
         return numero;
     }
     
-    public int getEstado() {
-        return numero;
+    public EstadoFactura getEstado() {
+        return estado;
     }
     
-    public void getDetalleFactura() {
-        System.out.println("***************");
-        System.out.println("Fecha y hora de Emision: " + fechaHoraEmision);
-        System.out.println("***************");
-        System.out.println("Numero de factura: " + numero);
-        System.out.println("***************");
+    public ArrayList getDetalleFactura() {
+        return detallesPedido;
     }
 
-    public String getFechaHoraEmision() {
+    public Date getFechaHoraEmision() {
         return fechaHoraEmision;
     }
     
     /**
      * METODOS SET
      */
-    public int setEstado() {
-        return numero;
+    public void setEstado(String nombre) {
+        estado.setNombre(nombre);
     }
 
-    public void setFechaHoraEmision(String fechaHoraEmision) {
+    public void setFechaHoraEmision(Date fechaHoraEmision) {
         this.fechaHoraEmision = fechaHoraEmision;
     }
 
@@ -68,10 +71,6 @@ public class Factura {
     /**
      * OTROS METODOS
      */
-    public void buscarItemsAFacturar() {
-        
-    }
-    
     public void calcTotalFactura() {
         
     }
