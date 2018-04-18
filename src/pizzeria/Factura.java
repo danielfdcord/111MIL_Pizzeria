@@ -5,7 +5,6 @@
  */
 package pizzeria;
 
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -14,7 +13,7 @@ import java.util.Date;
  */
 public class Factura {
     /**
-     * CAMPOS
+     * ATRIBUTOS
      */
     private Date fechaHoraEmision;
     private int numero;
@@ -79,8 +78,9 @@ public class Factura {
      * OTROS METODOS
      */
     
-    public String toString(){
-        return "";
+    @Override
+    public String toString() {
+        return super.toString(); //To change body of generated methods, choose Tools | Templates.
     }
     
     public void buscarItemsAFacturar(){
