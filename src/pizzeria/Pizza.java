@@ -12,7 +12,6 @@ package pizzeria;
 public class Pizza{
     private String nombre;
     private float precio;
-    private Pizza pizza;
     private TamanioPizza tamanio;
     private TipoPizza tipoPizza;
     private VariedadPizza variedad;
@@ -29,10 +28,9 @@ public class Pizza{
         this.variedad = variedad;
     }
 
-    public Pizza(String nombre, float precio, Pizza pizza, TamanioPizza tamanio, TipoPizza tipoPizza, VariedadPizza variedad) {
+    public Pizza(String nombre, float precio, TamanioPizza tamanio, TipoPizza tipoPizza, VariedadPizza variedad) {
         this.nombre = nombre;
         this.precio = precio;
-        this.pizza = pizza;
         this.tamanio = tamanio;
         this.tipoPizza = tipoPizza;
         this.variedad = variedad;
@@ -53,9 +51,6 @@ public class Pizza{
     public void setPrecio(float precio) {
         this.precio = precio;
     }
-    public Pizza getPizza() {
-        return pizza;
-    }
     
     public TamanioPizza getTamanioPizza() {
         return tamanio;
@@ -68,4 +63,10 @@ public class Pizza{
     public VariedadPizza getVariedad() {
         return variedad;
     }
+    public String toString(){
+        return "Nombre: "+this.nombre+". Variedad: "+this.variedad.getNombre()+". Tipo: "+this.tipoPizza.getNombre()+". Precio: $"+this.precio+". Tamaño: "+this.tamanio.getNombre()+".";
+    
+    }
+    
+    
 }
