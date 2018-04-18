@@ -80,7 +80,8 @@ public class Factura {
     
     @Override
     public String toString() {
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        return "Fecha: "+this.fechaHoraEmision+"\nNumero: "+this.numero+
+                "\nEstado: "+this.estado.toString()+"\nDetalle: "+this.detalleFactura.toString();
     }
     
     public void buscarItemsAFacturar(){
