@@ -17,9 +17,25 @@ public class Pizza{
     private TipoPizza tipoPizza;
     private VariedadPizza variedad;
 
-    public Pizza(String nombre, float precio) {
+    public void setTamanio(TamanioPizza tamanio) {
+        this.tamanio = tamanio;
+    }
+
+    public void setTipoPizza(TipoPizza tipoPizza) {
+        this.tipoPizza = tipoPizza;
+    }
+
+    public void setVariedad(VariedadPizza variedad) {
+        this.variedad = variedad;
+    }
+
+    public Pizza(String nombre, float precio, Pizza pizza, TamanioPizza tamanio, TipoPizza tipoPizza, VariedadPizza variedad) {
         this.nombre = nombre;
         this.precio = precio;
+        this.pizza = pizza;
+        this.tamanio = tamanio;
+        this.tipoPizza = tipoPizza;
+        this.variedad = variedad;
     }
 
     public String getNombre() {
