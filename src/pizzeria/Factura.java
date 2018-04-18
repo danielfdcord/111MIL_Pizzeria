@@ -18,8 +18,8 @@ public class Factura {
      */
     private Date fechaHoraEmision;
     private int numero;
-    private ArrayList<DetallePedido> detallesPedido;
     private EstadoFactura estado;
+    private DetallePedido detalleFactura;
 
     /**
      * CONSTRUCTORES
@@ -27,37 +27,40 @@ public class Factura {
     public Factura() {
     }
 
-    public Factura(Date fechaHoraEmision, int numero) {
+    public Factura(Date fechaHoraEmision, int numero,EstadoFactura estado,DetallePedido detalle) {
         this.fechaHoraEmision = fechaHoraEmision;
         this.numero = numero;
-        detallesPedido = new ArrayList();
-        estado = new EstadoFactura();
+        this.estado = estado;
+        this.detalleFactura = detalle;
     }
 
     /**
      * METODOS GET
+     * @return 
      */
     public int getNumero() {
-        return numero;
+        return this.numero;
     }
-    
-    public EstadoFactura getEstado() {
-        return estado;
-    }
-    
-    public ArrayList getDetalleFactura() {
-        return detallesPedido;
-    }
-
+ 
     public Date getFechaHoraEmision() {
-        return fechaHoraEmision;
+        return this.fechaHoraEmision;
     }
+    
+    public DetallePedido getDetalleFactura(){
+        return this.detalleFactura;
+    }
+    
+    public EstadoFactura getEstado(){
+        return this.estado;
+    }
+    
     
     /**
      * METODOS SET
+     * @param estado
      */
-    public void setEstado(String nombre) {
-        estado.setNombre(nombre);
+    public void setEstado(EstadoFactura estado) {
+        this.estado= estado;
     }
 
     public void setFechaHoraEmision(Date fechaHoraEmision) {
@@ -68,10 +71,24 @@ public class Factura {
         this.numero = numero;
     }
     
+    public void setDetalleFactura(DetallePedido detalle){
+        this.detalleFactura = detalle;
+    }
+    
     /**
      * OTROS METODOS
      */
-    public void calcTotalFactura() {
-        
+    
+    public String toString(){
+        return "";
     }
+    
+    public void buscarItemsAFacturar(){
+    
+    }
+    
+    public float calcTotalFactura() {
+        return 0;
+    }
+    
 }
